@@ -1,0 +1,8 @@
+
+public class Student {
+	int gradeLevel;
+	
+	Student(int selectGradeLevel){
+		selectGradeLevel = gradeLevel;
+	}
+}
