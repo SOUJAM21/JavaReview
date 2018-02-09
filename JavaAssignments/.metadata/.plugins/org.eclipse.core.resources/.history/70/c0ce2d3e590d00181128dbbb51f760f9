@@ -1,0 +1,53 @@
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.Action;
+import javax.swing.JButton;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+
+public class NumberPanel extends JPanel implements ActionListener {
+	public NumberPanel() {
+		super();
+
+		GridLayout gridLayout = new GridLayout(4, 3);
+		setLayout(gridLayout);
+
+		for (int i = 0; i <= 9; i++) {
+			if (i == 9) {
+				addButton("");
+			}
+
+			addButton(Integer.toString(i));
+
+			if (i == 9) {
+				addButton("");
+			}
+
+		}
+
+		
+	}
+	
+
+	private void addButton(String number) {
+		JButton button = new JButton();
+		button.setText(number);
+		button.setFont(new Font("Arial", Font.PLAIN, 40));
+		button.setPreferredSize(new Dimension(80, 80));
+		add(button);
+		button.addActionListener(this);
+	}
+
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		JOptionPane.showMessageDialog(this, "Clicked here " + e.getActionCommand());
+		
+	}
+}

@@ -1,7 +1,0 @@
-
-public class Car {
-	int maxMPH;
-	int acceleration;
-	int decceleration;
-	String Brand;
-}

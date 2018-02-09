@@ -1,0 +1,36 @@
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.GridLayout;
+
+import javax.swing.JButton;
+import javax.swing.JPanel;
+
+public class OperationPanel extends JPanel {
+	public OperationPanel() {
+		super();
+		
+		GridLayout gridLayout = new GridLayout(5, 1);
+		setLayout(gridLayout);
+
+		addButton("+");
+		
+		addButton("-");
+		
+		addButton("*");
+		
+		addButton("/");
+		
+		addButton("=");
+		
+	}
+	
+	
+	
+	private void addButton(String operation) {
+		JButton button = new JButton();
+		button.setText(operation);
+		button.setFont(new Font("Arial", Font.PLAIN, 40));
+		button.setPreferredSize(new Dimension(40, 40));
+		add(button);
+	}
+}

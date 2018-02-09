@@ -1,0 +1,39 @@
+import java.awt.Color;
+import java.awt.GridLayout;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+public class CalcFrame extends JFrame {
+
+		public CalcFrame(){
+			setSize(400, 500);
+			setVisible(true);
+			setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+			GridLayout gridLayout = new GridLayout(2, 2);
+			setLayout(gridLayout);
+
+			AnswerPanel answerPanel = new AnswerPanel();
+			answerPanel.setSize(100, 100);
+			answerPanel.setBackground(Color.gray);
+
+			add(answerPanel);
+
+			add(new JPanel());
+
+			NumberPanel numberPanel = new NumberPanel(answerPanel);
+			numberPanel.setSize(300, 100);
+			numberPanel.setBackground(Color.blue);
+
+			add(numberPanel);
+
+			OperationPanel operationPanel = new OperationPanel();
+			operationPanel.setSize(100, 100);
+			operationPanel.setBackground(Color.gray);
+
+			add(operationPanel);
+
+			setVisible(true);
+		}
+}
